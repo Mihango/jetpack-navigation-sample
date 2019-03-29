@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.techmashinani.navigation_sample.R
+import kotlinx.android.synthetic.main.fragment_display.*
 
 
 class DisplayFragment : Fragment() {
@@ -20,5 +21,13 @@ class DisplayFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_display, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val bundle = DisplayFragmentArgs.fromBundle(arguments!!)
+        val salute= bundle.salute
+        val name = bundle.username
 
+        val displayText = "$salute $name!"
+        text_details.text = displayText
+    }
 }
