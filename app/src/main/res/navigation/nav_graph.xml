@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/requestFragment">
+
+    <fragment
+            android:id="@+id/requestFragment"
+            android:name="com.techmashinani.navigation_sample.fragments.RequestFragment"
+            android:label="fragment_request"
+            tools:layout="@layout/fragment_request">
+        <action
+                android:id="@+id/action_requestFragment_to_displayFragment"
+                app:destination="@id/displayFragment"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/displayFragment"
+            android:name="com.techmashinani.navigation_sample.fragments.DisplayFragment"
+            android:label="fragment_display"
+            tools:layout="@layout/fragment_display">
+        
+        <argument
+                android:name="username"
+                app:argType="string"
+                android:defaultValue="AppName"/>
+
+        <argument android:name="salute"
+                  app:argType="string"
+                  android:defaultValue="Hello" />
+    </fragment>
+</navigation>
